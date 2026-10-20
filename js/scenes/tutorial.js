@@ -29,9 +29,13 @@ const TutorialScene = {
     }
   },
   onKeyDown(e) {
-    if (e.code === 'Escape' || e.code === 'Enter') switchScene(HomeScene);
+    if (e.code === 'Escape' || e.code === 'Enter') {
+      playSfx('back');
+      switchScene(HomeScene);
+    }
   },
   onPointerDown() {
+    playSfx('back');
     switchScene(HomeScene);
   },
   onPointerMove() {},

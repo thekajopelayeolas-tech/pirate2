@@ -207,9 +207,11 @@ const PlayScene = {
             this.effects[it.kind] = powerupDuration(it.kind); // refreshes if already active
           }
           this.reshuffleDeck(it.kind);
+          playSfx('powerup');
         } else {
           const multiplier = this.effects.double > 0 ? 2 : 1;
           this.score += it.value * multiplier;
+          playSfx('collect');
         }
         return false;
       }
@@ -254,7 +256,10 @@ const PlayScene = {
   },
   onKeyDown(e) {
     // Esc ends the round and opens the results screen (coins are paid there)
-    if (e.code === 'Escape') switchScene(ResultScene, { score: this.score });
+    if (e.code === 'Escape') {
+      playSfx('back');
+      switchScene(ResultScene, { score: this.score });
+    }
   },
   onPointerDown(e) {
     setPointerFromEvent(e);

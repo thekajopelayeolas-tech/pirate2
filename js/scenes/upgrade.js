@@ -63,12 +63,16 @@ const UpgradeScene = {
   },
   tryBuy(i) {
     const result = buyUpgrade(UPGRADE_KINDS[i]);
-    if (result === 'ok') this.notice = '';
+    if (result === 'ok') {
+      this.notice = '';
+      playSfx('confirm');
+    }
     else if (result === 'max') this.notice = 'Already at max level';
     else this.notice = 'Not enough coins';
   },
   onKeyDown(e) {
     if (e.code === 'Escape') {
+      playSfx('back');
       switchScene(HomeScene);
       return;
     }

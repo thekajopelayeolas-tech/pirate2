@@ -93,6 +93,22 @@ music.volume = 0.35;
 
 const winSound = new Audio('pirate_win.mp3');
 
+// Short sound effects, played over the music
+const SFX = {
+  confirm: 'confirm.mp3',               // home buttons, shop and upgrade purchases
+  back: 'back.mp3',                     // leaving a screen with Esc
+  collect: 'treasure_cove_collect.mp3', // coins and gems
+  powerup: 'power_up_2.mp3'             // power-up pickups
+};
+const SFX_VOLUME = 0.6;
+
+// Plays a sound effect. Each call makes its own player so quick sounds can overlap.
+function playSfx(name) {
+  const sfx = new Audio(SFX[name]);
+  sfx.volume = SFX_VOLUME;
+  sfx.play().catch(() => {});
+}
+
 // Shared input state
 const keys = {};
 let pointerX = null;

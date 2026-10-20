@@ -60,12 +60,14 @@ const ShopScene = {
   tryBuy(i) {
     if (buyPowerUp(SHOP_KINDS[i])) {
       this.notice = '';
+      playSfx('confirm');
     } else {
       this.notice = 'Not enough coins';
     }
   },
   onKeyDown(e) {
     if (e.code === 'Escape') {
+      playSfx('back');
       switchScene(HomeScene);
       return;
     }

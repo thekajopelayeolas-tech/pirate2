@@ -10,6 +10,7 @@ const HOME_BUTTONS = {
 
 // Goes to the chosen screen
 function openFromHome(name) {
+  playSfx('confirm');
   if (name === 'tutorial') switchScene(TutorialScene);
   else if (name === 'play') switchScene(PlayScene);
   else if (name === 'shop') switchScene(ShopScene);

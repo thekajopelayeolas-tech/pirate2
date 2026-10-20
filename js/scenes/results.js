@@ -25,7 +25,10 @@ const ResultScene = {
   },
   onKeyDown(e) {
     if (e.code === 'Enter' || e.code === 'Space') switchScene(PlayScene);
-    else if (e.code === 'Escape') switchScene(HomeScene);
+    else if (e.code === 'Escape') {
+      playSfx('back');
+      switchScene(HomeScene);
+    }
   },
   onPointerDown() {
     switchScene(PlayScene);
