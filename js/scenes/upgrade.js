@@ -58,7 +58,7 @@ const UpgradeScene = {
       text(price, r.x + r.w - 6, r.y + 3, 8, 'right');
     });
 
-    const hint = this.notice || 'Click or press 1-5 to upgrade   ESC = home';
+    const hint = this.notice || 'Click or press 1-5 to upgrade   Z = home';
     text(hint, W / 2, 133, 8, 'center');
   },
   tryBuy(i) {
@@ -71,7 +71,7 @@ const UpgradeScene = {
     else this.notice = 'Not enough coins';
   },
   onKeyDown(e) {
-    if (e.code === 'Escape') {
+    if (e.code === 'KeyZ') {
       playSfx('back');
       switchScene(HomeScene);
       return;

@@ -96,7 +96,7 @@ const winSound = new Audio('pirate_win.mp3');
 // Short sound effects, played over the music
 const SFX = {
   confirm: 'confirm.mp3',               // home buttons, shop and upgrade purchases
-  back: 'back.mp3',                     // leaving a screen with Esc
+  back: 'back.mp3',                     // leaving a screen with Z
   collect: 'treasure_cove_collect.mp3', // coins and gems
   powerup: 'power_up_2.mp3'             // power-up pickups
 };

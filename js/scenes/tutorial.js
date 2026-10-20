@@ -19,8 +19,8 @@ const TutorialScene = {
       'W wide     G gem rush  +5 bonus',
       '',
       'Move: arrow keys, A / D, or mouse',
-      '1 point = 1 coin. ESC ends a round.',
-      'ESC or click = back to home'
+      '1 point = 1 coin. Z ends a round.',
+      'Z or click = back to home'
     ];
     let y = 36;
     for (const line of lines) {
@@ -29,7 +29,7 @@ const TutorialScene = {
     }
   },
   onKeyDown(e) {
-    if (e.code === 'Escape' || e.code === 'Enter') {
+    if (e.code === 'KeyZ' || e.code === 'Enter') {
       playSfx('back');
       switchScene(HomeScene);
     }

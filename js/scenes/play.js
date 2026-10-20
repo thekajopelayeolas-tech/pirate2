@@ -255,8 +255,8 @@ const PlayScene = {
     }
   },
   onKeyDown(e) {
-    // Esc ends the round and opens the results screen (coins are paid there)
-    if (e.code === 'Escape') {
+    // Z ends the round and opens the results screen (coins are paid there)
+    if (e.code === 'KeyZ') {
       playSfx('back');
       switchScene(ResultScene, { score: this.score });
     }

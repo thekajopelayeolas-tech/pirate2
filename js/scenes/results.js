@@ -20,12 +20,12 @@ const ResultScene = {
       'Total coins: ' + progress.coins,
       '',
       'ENTER = play again',
-      'ESC = home screen'
+      'Z = home screen'
     ]);
   },
   onKeyDown(e) {
     if (e.code === 'Enter' || e.code === 'Space') switchScene(PlayScene);
-    else if (e.code === 'Escape') {
+    else if (e.code === 'KeyZ') {
       playSfx('back');
       switchScene(HomeScene);
     }
