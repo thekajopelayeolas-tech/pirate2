@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Treasure Grab</title>
+  <!-- Chest icons: tab icon, Safari favorites / home screen icon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: #0b2a40;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    #game {
+      /* Fill as much of the window as possible while keeping the 16:9 shape */
+      width: min(96vw, calc(96vh * 16 / 9));
+      height: auto;
+      image-rendering: auto;
+      touch-action: none;
+      cursor: pointer;
+      box-shadow: 0 0 24px rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <canvas id="game" width="256" height="144"></canvas>
+
+  <!-- Core setup and scene manager (must load first) -->
+  <script src="js/core.js"></script>
+
+  <!-- One file per scene -->
+  <script src="js/scenes/home.js"></script>
+  <script src="js/scenes/tutorial.js"></script>
+  <script src="js/scenes/shop.js"></script>
+  <script src="js/scenes/upgrade.js"></script>
+  <script src="js/scenes/play.js"></script>
+  <script src="js/scenes/results.js"></script>
+
+  <!-- Input routing and game loop (must load last) -->
+  <script src="js/main.js"></script>
+</body>
+</html>
